@@ -6,13 +6,17 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "test1": "npx playwright test tests/test1.spec.js --headed",
-    "test2": "npx playwright test tests/test2.spec.js --headed"
+    "test1": "npx playwright test tests/TestSuite1_iNEWS/test1.spec.js",
+    "test2": "npx playwright test tests/TestSuite1_iNEWS/test2.spec.js",
+    "test3": "npx playwright test tests/TestSuite2_NewScientist/test2.spec.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.55.0"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
   }
 }
