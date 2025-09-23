@@ -6,9 +6,10 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "test1": "npx playwright test tests/TestSuite1_iNEWS/test1.spec.js",
-    "test2": "npx playwright test tests/TestSuite1_iNEWS/test2.spec.js",
-    "test3": "npx playwright test tests/TestSuite2_NewScientist/test2.spec.js"
+    "testSuite1": "npx playwright test tests/TestSuite1_iNEWS/test.spec.js",
+    "testSuite2": "npx playwright test tests/TestSuite2_NewScientist/test.spec.js",
+    "test:project2": "npx playwright test --project='Desktop Chrome'",
+    "test:project1": "npx playwright test --project='Mobile Chrome UK'"
   },
   "keywords": [],
   "author": "",

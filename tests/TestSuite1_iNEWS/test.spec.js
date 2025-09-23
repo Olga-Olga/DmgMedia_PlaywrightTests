@@ -79,7 +79,6 @@ test("GA tracking and consent modal test on iNews politics page", async ({
 
   // Logging
   console.log(chalk.green.bold("📗 user_engagement GA request:"));
-  console.log(chalk.green(JSON.stringify(ueParams, null, 2)));
 
   // Assertions for user_engagement
   expect(ueParams["gcs"]).toBe("G111");

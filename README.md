@@ -1,7 +1,8 @@
 # DmgMedia_PlaywrightTests
 
-Playwright JS tests for Dmg Media websites.  
-Includes two test suites that check Google Analytics events, consent modals, and theme appearance.
+Playwright JS tests for Dmg Media websites.\
+Includes two test suites that check Google Analytics events, consent
+modals, and theme appearance.
 
 ---
 
@@ -11,21 +12,34 @@ Includes two test suites that check Google Analytics events, consent modals, and
 # Install dependencies
 npm install
 
-# Run all tests
+# Run all tests on all projects
 npx playwright test
 
 # Run with UI (debug mode)
 npx playwright test --ui
+
+Run Specific Suites or Projects
+# Run Suite 1 (inews.co.uk politics page tests)
+npm run testSuite1
+
+# Run Suite 2 (newscientist.com dark/light mode tests)
+npm run testSuite2
+
+# Run all tests in Mobile Chrome UK (project from playwright.config.js)
+npm run test:project1
+
+# Run all tests in Desktop Chrome (project from playwright.config.js)
+npm run test:project2
 ```
 
 ---
 
 ## Test Suites
 
-### Test Suite 1 – Politics Page (inews.co.uk)
+### 📱 Test Suite 1 -- Politics Page (inews.co.uk)
 
 - Navigate to: `https://inews.co.uk/category/news/politics`
-- Browser: **Mobile Chrome (UK region)**
+- Project: **Mobile Chrome UK**
 - Validate Google Analytics `page_view` request:
   - `ep.sub_channel_1 = news/politics`
   - `gcs = G101`
@@ -37,10 +51,10 @@ npx playwright test --ui
 
 ---
 
-### 📂 Test Suite 2 – New Scientist (newscientist.com)
+### 💻 Test Suite 2 -- New Scientist (newscientist.com)
 
 - Navigate to: `https://www.newscientist.com/`
-- Browser: **Desktop Chrome (UK region, Dark Mode enabled)**
+- Project: **Desktop Chrome (UK region, Dark Mode enabled)**
 - Confirm after load:
   - `<html>` has class `Dark`
   - `localStorage["colourSchemeAppearance"] = "Dark"`
@@ -48,16 +62,29 @@ npx playwright test --ui
 - Toggle appearance → confirm:
   - `<html>` switches to `Light` (no `Dark`)
   - `localStorage["colourSchemeAppearance"] = "Light"`
+- Refresh page → confirm Light mode persists
 
 ---
 
 ## 📑 Project Structure
 
-```
-tests/
- ├── politics.spec.js       # Suite 1
- ├── newscientist.spec.js   # Suite 2
-playwright.config.js
-package.json
-README.md
-```
+    tests/
+     ├── TestSuite1_iNEWS/
+     │    ├── test.spec.js
+     ├── TestSuite2_NewScientist/
+     │    └── test.spec.js
+    playwright.config.js
+    package.json
+    README.md
+
+---
+
+## 🧪 Playwright Projects
+
+The config defines **two projects**:
+
+- **Desktop Chrome** → used in Test Suite 2 (New Scientist)\
+- **Mobile Chrome UK** → used in Test Suite 1 (iNews Politics)
+
+You can run tests for both in one go, or filter by project using the
+`--project` flag.
