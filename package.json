@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "Playwright Testing scenarios for Dmg Media",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test1": "npx playwright test tests/test1.spec.js --headed",
+    "test2": "npx playwright test tests/test2.spec.js --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.5.2"
+    "@playwright/test": "^1.55.0"
   }
 }
