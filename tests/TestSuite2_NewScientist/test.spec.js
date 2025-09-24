@@ -59,7 +59,9 @@ test("New Scientist Dark/Light Mode and Consent Modal", async ({ context }) => {
     });
 
   // Wait until the toggle is visible before clicking
-  await expect(toggle).toBeVisible({ timeout: 10000 });
+  await toggle.waitFor({ state: "visible", timeout: 15000 });
+  await expect(toggle).toBeVisible({ timeout: 15000 });
+  await expect(toggle).toBeEnabled({ timeout: 15000 });
 
   await toggle.click();
 

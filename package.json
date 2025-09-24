@@ -8,8 +8,8 @@
     "test:headed": "npx playwright test --headed",
     "testSuite1": "npx playwright test tests/TestSuite1_iNEWS/test.spec.js",
     "testSuite2": "npx playwright test tests/TestSuite2_NewScientist/test.spec.js",
-    "test:project2": "npx playwright test --project='Desktop Chrome'",
-    "test:project1": "npx playwright test --project='Mobile Chrome UK'"
+    "test:project1": "npx playwright test --project=\"Mobile Chrome UK\"",
+    "test:project2": "npx playwright test --project=\"Desktop Chrome\""
   },
   "keywords": [],
   "author": "",
