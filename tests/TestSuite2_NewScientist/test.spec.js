@@ -43,7 +43,16 @@ test("New Scientist Dark/Light Mode and Consent Modal", async ({ context }) => {
   // Step 5 Confirm that the modal is now removed from the DOM.
 
   const gotItButton = page.getByRole("button", { name: "Got it" });
-  await gotItButton.click({ force: true });
+
+  if (await gotItButton.isVisible({ timeout: 10000 })) {
+    await gotItButton.click();
+
+    await expect(gotItButton).toHaveCount(0, { timeout: 5000 });
+    console.log(chalk.green("Consent modal closed"));
+  } else {
+    console.log(chalk.yellow("Consent modal not found, skipping click"));
+  }
+
   await expect(gotItButton).toHaveCount(0);
   console.log(chalk.green("Consent modal closed"));
 

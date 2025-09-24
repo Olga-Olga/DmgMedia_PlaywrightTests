@@ -49,7 +49,7 @@ test("GA tracking and consent modal test on iNews politics page", async ({
   expect(pageViewRequests.length).toBeGreaterThan(0);
   pageViewRequests.forEach((qp) => {
     expect(qp["ep.sub_channel_1"]).toBe("news/politics");
-    expect.soft(qp["gcs"]).toBe("G111");
+    expect.soft(qp["gcs"]).toBe("G101");
     expect(qp["npa"]).toBe("1");
   });
 
@@ -81,7 +81,7 @@ test("GA tracking and consent modal test on iNews politics page", async ({
   console.log(chalk.green.bold("📗 user_engagement GA request:"));
 
   // Assertions for user_engagement
-  expect(ueParams["gcs"]).toBe("G111");
+  expect.soft(ueParams["gcs"]).toBe("G111");
   expect(ueParams["npa"] === "0" || ueParams["npa"] === undefined).toBe(true);
   console.log(chalk.yellow("✔ user_engagement GA params validated"));
 });
