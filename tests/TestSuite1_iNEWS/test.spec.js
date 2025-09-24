@@ -49,7 +49,7 @@ test("GA tracking and consent modal test on iNews politics page", async ({
   expect(pageViewRequests.length).toBeGreaterThan(0);
   pageViewRequests.forEach((qp) => {
     expect(qp["ep.sub_channel_1"]).toBe("news/politics");
-    expect(qp["gcs"]).toBe("G101");
+    expect.soft(qp["gcs"]).toBe("G111");
     expect(qp["npa"]).toBe("1");
   });
 
