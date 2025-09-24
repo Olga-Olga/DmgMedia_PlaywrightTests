@@ -17,19 +17,19 @@ const config = {
   // Define multiple projects (different environments or devices)
   projects: [
     {
-      name: "Mobile Chrome UK",
+      name: "Mobile_Chrome_UK",
       // Only run tests in this folder for this project
       testDir: "./tests/TestSuite1_iNEWS",
       use: {
         browserName: "chromium",
-        ...devices["Pixel 5"], // Mobile emulation
+        ...devices["Galaxy S20"], // Mobile emulation
         locale: "en-GB", // UK locale
       },
     },
     {
-      name: "Desktop Chrome",
+      name: "Desktop_Chrome",
       // Only run tests in this folder for this project
-      testDir: "./tests/TestSuite2_iNEWS",
+      testDir: "./tests/TestSuite2_NewScientist",
       use: {
         browserName: "chromium",
         viewport: { width: 1920, height: 1080 }, // Desktop viewport

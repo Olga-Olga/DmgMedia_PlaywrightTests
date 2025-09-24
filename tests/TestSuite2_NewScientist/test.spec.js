@@ -42,14 +42,10 @@ test("New Scientist Dark/Light Mode and Consent Modal", async ({ context }) => {
   // Step 4: Click on the Got It button shown in the consent modal on page.
   // Step 5 Confirm that the modal is now removed from the DOM.
 
-  const gotItButton = page.locator('button:has-text("Got It")');
-  if (await gotItButton.isVisible({ timeout: 5000 }).catch(() => false)) {
-    await gotItButton.click();
-    await expect(gotItButton).toHaveCount(0);
-    console.log(chalk.green("Consent modal closed"));
-  } else {
-    console.log(chalk.yellow("Consent modal not visible, skipping click."));
-  }
+  const gotItButton = page.getByRole("button", { name: "Got it" });
+  await gotItButton.click({ force: true });
+  await expect(gotItButton).toHaveCount(0);
+  console.log(chalk.green("Consent modal closed"));
 
   //   Step 6: Locate the Appearance toggle (#appearance-toggle) and click it to force the
   // theme to Light
@@ -106,8 +102,9 @@ test("New Scientist Dark/Light Mode and Consent Modal", async ({ context }) => {
   // confirming that the <html> element has a class of Light added to it after the load
   // event.
 
-  await page.reload();
-  await page.waitForTimeout(3000);
+  await page.goto("https://www.newscientist.com/", {
+    waitUntil: "domcontentloaded",
+  });
 
   const html_ = page.locator("html");
 

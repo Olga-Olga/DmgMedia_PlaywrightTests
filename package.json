@@ -4,12 +4,9 @@
   "description": "Playwright Testing scenarios for Dmg Media",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "test:headed": "npx playwright test --headed",
-    "test:debug": "npx playwright test --headed --debug",
-    "test:trace": "npx playwright test --headed --trace on",
-    "testSuite1": "npx playwright test tests/TestSuite1_iNEWS/test.spec.js --headed",
-    "testSuite2": "npx playwright test tests/TestSuite2_NewScientist/test.spec.js"
+    "test": "playwright test",
+    "test:suite1": "playwright test --project=Mobile_Chrome_UK",
+    "test:suite2": "playwright test --project=Desktop_Chrome"
   },
   "keywords": [],
   "author": "",
