@@ -4,7 +4,6 @@
   "description": "Playwright Testing scenarios for Dmg Media",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
     "test:suite1": "playwright test --project=Mobile_Chrome_UK",
     "test:suite2": "playwright test --project=Desktop_Chrome"
   },

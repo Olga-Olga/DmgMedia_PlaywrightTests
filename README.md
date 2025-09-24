@@ -15,21 +15,13 @@ npm install
 # Run all tests on all projects
 npx playwright test
 
-# Run with UI (debug mode)
-npx playwright test --ui
-
 Run Specific Suites or Projects
 # Run Suite 1 (inews.co.uk politics page tests)
-npm run testSuite1
+npm run test:suite1
 
 # Run Suite 2 (newscientist.com dark/light mode tests)
-npm run testSuite2
+npm run test:suite2
 
-# Run all tests in Mobile Chrome UK (project from playwright.config.js)
-npm run test:project1
-
-# Run all tests in Desktop Chrome (project from playwright.config.js)
-npm run test:project2
 ```
 
 ---
