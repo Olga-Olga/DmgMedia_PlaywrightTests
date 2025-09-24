@@ -12,7 +12,7 @@ const config = {
   reporter: [["list"], ["html", { open: "always" }]],
 
   // Default test options
-  use: { headless: false },
+  use: { headless: true },
 
   // Define multiple projects (different environments or devices)
   projects: [
